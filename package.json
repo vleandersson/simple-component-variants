@@ -1,8 +1,8 @@
 {
   "author": "Viktor Leandersson",
-  "name": "webpack-base",
-  "version": "1.0.0",
-  "description": "Base for ts webpack projects",
+  "name": "simple-variant-helper",
+  "version": "0.0.1",
+  "description": "Variant helper for styled-components",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js --color",
     "build": "webpack --config webpack.config.js",
