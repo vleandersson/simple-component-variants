@@ -1,1 +1,1 @@
-export * from "./variantHelper";
+export * from "./componentVariants";

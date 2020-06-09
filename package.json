@@ -1,24 +1,27 @@
 {
   "author": "Viktor Leandersson",
-  "name": "simple-variant-helper",
+  "name": "component-variants",
   "version": "0.0.1",
-  "description": "Variant helper for styled-components",
+  "description": "Styled variants for styled-components",
   "main": "./dist/bundle.js",
   "types": "./dist/src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vleandersson/simple-variant-helper.git"
+    "url": "https://github.com/vleandersson/simple-component-variants.git"
   },
+  "files": [
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js --color",
     "build": "webpack --config webpack.config.js",
     "test": "jest",
-    "prepublish": "tsc"
+    "prepublish": "tsc --noEmit"
   },
   "keywords": [
     "styled-components",
     "react",
-    "variant helper",
     "component variants"
   ],
   "license": "MIT",

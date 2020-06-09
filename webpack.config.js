@@ -19,7 +19,7 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     libraryTarget: "umd",
-    library: "simple-variant-helper",
+    library: "component-variants",
     umdNamedDefine: true,
   },
 };

@@ -1,6 +1,6 @@
-import { variantHelper } from "./variantHelper";
+import { componentVariants } from "./componentVariants";
 
-const variants = variantHelper({
+const variants = componentVariants({
   size: { small: "test_small", medium: "test_medium", large: "test_large" },
 });
 
