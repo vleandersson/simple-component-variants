@@ -1,7 +1,7 @@
 {
   "author": "Viktor Leandersson",
   "name": "component-variants",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Styled variants for styled-components",
   "main": "./dist/bundle.js",
   "types": "./dist/src/index.d.ts",
