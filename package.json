@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "description": "Styled variants for styled-components",
   "main": "./dist/bundle.js",
-  "types": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/vleandersson/simple-component-variants.git"
