@@ -33,8 +33,8 @@ interface ComponentVariantsStylingObject<D extends DefaultTheme> {
 }
 
 export function componentVariants<
-  D extends DefaultTheme = DefaultTheme,
-  T extends ComponentVariantsStylingObject<D> = {},
+  D extends DefaultTheme,
+  T extends ComponentVariantsStylingObject<D>,
   P = ThemedStyledProps<ObjectKeysAsStringUnion<T>, D>
 >(stylingObject: T): ComponentVariantsReturn<P, D> {
   const options = Object.keys(stylingObject);
