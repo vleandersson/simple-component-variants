@@ -5,7 +5,7 @@ import {
   ThemedStyledProps,
 } from "styled-components";
 
-export type Variants<F extends Function> = F extends (arg1: infer U) => unknown
+export type Variants<F> = F extends (arg1: infer U) => unknown
   ? Omit<U, "theme">
   : never;
 
@@ -33,27 +33,26 @@ interface ComponentVariantsStylingObject<D extends DefaultTheme> {
 }
 
 export function componentVariants<
-  D extends DefaultTheme,
   T extends ComponentVariantsStylingObject<D>,
+  D extends DefaultTheme = DefaultTheme,
   P = ThemedStyledProps<ObjectKeysAsStringUnion<T>, D>
->(stylingObject: T): ComponentVariantsReturn<P, D> {
-  return (props: P) => {
-    return Object.keys(stylingObject).map(
-      (option: keyof typeof stylingObject) => {
-        const optionVariants = stylingObject[option] as {
-          [k: string]: Interpolation<ThemeProps<D>>;
-        };
+>(stylingObject: T): ComponentVariantsReturn<P, D> | undefined {
+  return (props: P) =>
+    Object.keys(stylingObject).map((option) => {
+      const key = option as keyof typeof stylingObject;
 
-        const variant = ((props as unknown) as {
-          [k: string]: string | boolean | number;
-        })[(option as unknown) as string];
+      const optionVariants = stylingObject[key] as {
+        [k: string]: Interpolation<ThemeProps<D>>;
+      };
 
-        if (typeof variant === "boolean") {
-          return optionVariants[variant ? "true" : "false"];
-        } else if (variant !== undefined) {
-          return optionVariants[variant];
-        }
+      const variant = ((props as unknown) as {
+        [k: string]: string | boolean | number;
+      })[(key as unknown) as string];
+
+      if (typeof variant === "boolean") {
+        return optionVariants[variant ? "true" : "false"];
+      } else if (variant !== undefined) {
+        return optionVariants[variant];
       }
-    );
-  };
+    });
 }
