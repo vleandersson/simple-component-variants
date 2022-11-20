@@ -66,7 +66,7 @@ export const Button: React.FC<Props> = ({ size }) => {
 };
 ```
 
-### Variants
+### Variants
 Variants can be described with `string`, `enum`, `number` or a string-represented `boolean`.
 
 #### String
